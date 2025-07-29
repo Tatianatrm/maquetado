@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Anton&family=Anton+SC&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shippori+Antique+B1&family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Staatliches&display=swap" rel="stylesheet">
+
+      <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+      <link href="assets/fontawesome/css/solid.css" rel="stylesheet">
+</head>
+<body>
+    <header id="main-header">
+          <div class="container d-flex align-items-center tablet mobile">
+            <h1 id="logo"> Taekwondo ITF</h1>
+
+            <input id="menu-toggle" type="checkbox">
+            <label class="menu-mobile" for="menu-toggle">
+               <i class="fa-solid fa-bars"></i>
+            </label>
+
+            <nav class="main-navigation">
+               <ul>
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="clases.html">Clases</a></li>
+                  <li><a href="eventos.html">Eventos</a></li>
+                  <li><a href="inscripcion.html">Inscripcion</a></li>
+                  <li><a href="agradecimiento.html">Agradecimiento</a></li>
+               </ul>
+            </nav>
+         </div>
+      </header> 
+    <div class="container">
+      <section id="form">
+         <h2>FORMULARIO</h2>
+         <form id="formInscripcion">
+            <label for="motivo">Motivo de inscripción:</label>
+            <select id="motivo" name="motivo" required>
+               <option value="">Seleccione una opción</option>
+               <option value="escuela">Escuela</option>
+               <option value="torneo">Torneo</option>
+               <option value="examenGups">Examen GUPS</option>
+               <option value="examenDan">Examen DAN</option>
+            </select>
+
+            <!-- DATOS GENERALES (ocultos al inicio) -->
+            <div id="datosGenerales" class="oculto">
+               <label>Nombre:
+               <input type="text" id="nombre" name="nombre" required>
+               </label>
+               <label>Apellido: <input type="text" name="apellido" required></label>
+               <label>Fecha de nacimiento: <input type="date" name="fechaDeNacimiento" required></label>
+               <label>Correo electrónico: <input type="email" name="email" required></label>
+               <label>Teléfono: <input type="tel" name="telefono" required></label>
+            </div>
+
+            <!-- Secciones específicas (inicialmente ocultas) -->
+            <div id="escuela" class="oculto">
+               <label>DNI:<input type="text" name="dni" required></label>
+               <label>Foto 4x4: <input type="file" name="foto" required></label>
+               <label>Categoría: <input type="text" name="categoria" required></label>
+               <label>Peso: <input type="text" name="peso" required></label>
+               <label>Altura: <input type="text" name="altura" required></label>
+               <label>Apto físico: <input type="file" name="aptoFisico" required></label>
+               <fieldset>
+               <legend>Datos de contacto</legend>
+               <label>Relación: <input type="text" name="relacion" required></label>
+               <label>Nombre: <input type="text" name="nombreVinculo" required></label>
+               <label>Apellido: <input type="text" name="apellidoVinculo" required></label>
+               <label>Teléfono: <input type="tel" name="telefonoVinculo" required></label>
+               <label>Fecha de nacimiento: <input type="date" name="fechaVinculo" required></label>
+               </fieldset>
+            </div>
+            <div id="torneo" class="oculto">
+               <label>Nombre del instructor: <input type="text" name="nombreDelInstructor" required></label>
+               <label>Categoría: <input type="text" name="categoria" required></label>
+               <label>Peso: <input type="text" name="peso" required></label>
+               <label>Altura: <input type="text" name="altura" required></label>
+               <label>Foto 4x4 actual: <input type="file" name="fotoInstructor" required></label>
+               <label>Fecha de nacimiento: <input type="date" name="fechaInstructor" required></label>
+            </div>
+            <div id="examenGups" class="oculto">
+               <label>Categoría:
+               <select id="categoriaExamen" name="categoriaExamen" required>
+               <option value="">Seleccione</option>
+               <option value="blanco">Blanco</option>
+               <option value="blanco-amarilla">Blanco punta amarilla</option>
+               <option value="amarillo">Amarillo</option>
+               <option value="amarillo-verde">Amarillo punta verde</option>
+               <option value="verde">Verde</option>
+               <option value="verde-azul">Verde punta azul</option>
+               <option value="azul">Azul</option>
+               <option value="azul-roja">Azul punta roja</option>
+               <option value="rojo">Rojo</option>
+               <option value="rojo-negro">Rojo punta negro</option>
+               </select>
+            </label>
+            <p class="aviso"> 
+               ⚠️ Al enviar este formulario, recibirás un enlace con la teoría correspondiente a tu categoría.
+            </p>
+            </div> 
+            <div id="examenDan" class="oculto mensajeExamenDan"></div> 
+
+            <button type="submit">Enviar</button> 
+
+         </form>
+         <div id="mensajeFinal"></div> 
+      </section>
+   
+      <section id="contact">
+         <footer>
+            <h2>CONTACTO</h2>
+            <div>
+               <div>
+                     <img src="imagenes/fotofo.JPG" width="250" height="250" title="Alumna Tatiana Romina Machado Navarro">
+               </div>      
+               <div class="middle">
+                  <p>Alumna: Tatiana Romina Machado Navarro</p>
+                  <p>Fecha de nacimiento: 10/11/2000</p>
+                  <p>Mail: tatiana.machado@davinci.edu.ar </p>            
+               </div>
+               <div>
+                  <ul>
+                     <li><a href="https://uniontaekwon-do.com.ar/historia-taekwon-do-noticias/ciclo-de-composicion-del-taekwon-do/">Union taekwon-do</a></li>
+                     <li><a href="https://itftkd.sport/es/historia/nuestra-filosofia/">Itf tkd sport</a></li>   
+                     <li><a href=" https://christiantkd.com/understanding-taekwondo-belt-system-ranking/">Christian tkd</a></li>
+                     <li><a href=" https://drive.google.com/file/d/19MbUuKoaube_wrsxSUfE_SzA-JOe4xO5/view"> PDF </a></li>
+                     <li><a href="prompts.txt">Chat gpt</a></li>
+                  </ul>
+               </div>
+            </div>
+         </footer>
+      </section>
+   </div>
+   <script src="js/formulario.js"></script>  
+   <a id="to-top" href="#">
+      <i class="fa-solid fa-arrow-up"></i>
+   </a>  
+</body>
+</html>
