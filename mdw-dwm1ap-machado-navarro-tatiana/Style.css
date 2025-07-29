@@ -6,7 +6,6 @@
     margin: 0;
     padding: 0;  
     box-sizing: border-box;
-    
 }
 
 html{
@@ -21,9 +20,6 @@ body{
     background-position: top left, top right;
     background-size: 1400px auto , 1500px auto;
     color: #fff;
-  
-   
-    
 }
 
 body p {
